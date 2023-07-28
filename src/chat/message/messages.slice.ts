@@ -1,6 +1,6 @@
 
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {chatApi} from "../api/chat.api";
+import {chatApi} from "../chatItemList/chat.api";
 
 // Определение типа возвращаемого значения санки
 

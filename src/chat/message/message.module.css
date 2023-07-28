@@ -1,10 +1,41 @@
-.you{
+.messageContainer {
     display: flex;
-    width: 50%;
-
+    flex-direction: column;
+    width: 100%;
 }
-.friend{
-    display: flex;
-    width: 50%;
 
+.messageWrapper {
+    display: flex;
+    justify-content: flex-end; /* Выравнивание ваших сообщений справа */
+}
+
+.i {
+    margin-bottom: 8px; /* Отступ между вашими сообщениями */
+}
+
+.friend {
+    display: flex;
+    justify-content: flex-start; /* Выравнивание сообщений друзей слева */
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 50%;
+}
+
+.iMessage {
+    background: rgba(64, 126, 201, 0.16);
+}
+
+.friendMessage {
+    background: rgba(248, 244, 244, 0.80);
+}
+
+.time {
+ display: block;
+    text-align: right;
+    color: black;
+    opacity: 50%;
+    font-size: 10px;
 }

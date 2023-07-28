@@ -9,7 +9,7 @@ export const Message = () => {
     return (
         <div className={s.messageContainer}>
             {
-                messages.map(el => {
+              messages.map(el => {
                     const createdAtDate = dayjs(el.created_at * 1000);
                     if (el.user.you) {
                         return (

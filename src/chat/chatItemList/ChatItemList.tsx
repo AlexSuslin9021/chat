@@ -5,12 +5,13 @@ import {getDataChat} from "../store/chat";
 import {useAppSelector} from "../store/store";
 import {OneChat} from "./oneChat";
 import {useAppDispatch} from "../hooks/useAppDispatch";
+import dayjs from "dayjs";
 
 
 export const ChatItemList = () => {
     const dispatch = useAppDispatch()
     const chatData = useAppSelector(state => state.chat)
-    console.log(chatData)
+
 
     useEffect(() => {
         dispatch(getDataChat())
@@ -19,18 +20,20 @@ export const ChatItemList = () => {
     return (
         <div className={s.chatItem}>
             {Array.isArray(chatData) && chatData.length > 0 ? (
-                chatData.map((c) => (
-                    <div key={c.id}>
+                chatData.map((c) => {
+                    const createdAtDate = dayjs(c.created_at * 1000);
+                 return   <div key={c.id}>
                         {/* Преобразуем Unix timestamp в строку с помощью toLocaleString() */}
                         <OneChat
+                            lastName={c.last_message.user_surname}
                             id={c.id}
                             src={c.avatar}
                             name={c.last_message.user_name}
-                            time={new Date(c.last_message as any * 1000).toLocaleString()}
+                            time={createdAtDate.format('MM:DD')}
                             message={c.last_message.message}
                         />
                     </div>
-                ))
+                })
             ) : (
                 // Добавлен лоадер или информация о загрузке
                 <div>Loading...</div>

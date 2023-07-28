@@ -11,7 +11,7 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getMessage.fulfilled, (state, action: PayloadAction<MessageType[]>) => {
-            return action.payload;
+            return action.payload.reverse();
         });
     },
 });

@@ -3,16 +3,27 @@
     height: 90vh;
     border-right: 1px solid lightgray;
 
+
+}
+.chatItem :hover{
+    background: lightblue;
+    overflow: auto;
+
 }
 .one{
     display: flex;
     width: 100%;
     height: 50px;
-}
-.one :hover{
-  background: lightblue;
+    padding: 5px;
 
 }
+.ava{
+    width: 50px;
+    height: 50px;
+    border-radius:5px;
+    margin-right: 15px;
+}
+
 .user{
     display: flex;
     flex-direction: column;
@@ -20,11 +31,14 @@
     overflow: hidden;
 }
 .name{
-
+font-size: 14px;
     margin: 0;
+    opacity: 80%;
+    font-weight: 600;
 }
 .time{
-
+opacity: 50%;
+    font-size: 10px;
     top:0;
     right: 0;
 }
@@ -34,6 +48,7 @@ font-size: 12px;
     white-space: nowrap; /* Запрещаем перенос текста на новую строку */
     overflow: hidden; /* Скрываем все, что не помещается в контейнере */
     text-overflow: ellipsis;
+    opacity: 50%;
 }
 .userinfo{
     display: flex;

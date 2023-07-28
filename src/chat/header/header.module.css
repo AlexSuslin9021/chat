@@ -3,11 +3,17 @@
     width: 100vw;
     height: 64px;
     border-bottom: 1px solid lightgray;
+
+
 }
 .all{
    width: 30vw;
     border-right: 1px solid lightgray;
+
+
 }
 .project{
     width: 70vw;
+
+
 }

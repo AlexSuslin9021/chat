@@ -1,15 +1,29 @@
-/* Input.module.css */
+.block{
+position: relative;
+}
 .inputContainer {
     width: 70vw;
     max-height: 3em;
     padding: 5px;
     border: 1px solid #ccc;
     overflow-y: auto;
-border-radius: 10px;
-    margin:50px ;
-    position: relative;
+    border-radius: 10px;
+    margin: 50px;
+
+
+
 }
 
+.btn{
+position: absolute;
+    right:50px ;
+    bottom:15px;
+}
+.reg{
+    position: absolute;
+    left:50px ;
+    bottom: 25px;
+}
 /* Для удобства добавим стили для скроллбара (необязательно) */
 .inputContainer::-webkit-scrollbar {
     width: 8px;

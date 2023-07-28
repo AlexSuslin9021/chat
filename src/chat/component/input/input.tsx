@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import styles from './input.module.css'; // Импортируем стили из файла
+import s from './input.module.css';
+import regular from '../../image/Regular.svg'
+import button from '../../image/button.svg'
 
 export const Input = () => {
     const [inputText, setInputText] = useState('');
@@ -10,12 +12,19 @@ export const Input = () => {
     };
 
     return (
+        <div className={s.block}>
         <div
-            className={styles.inputContainer}
+            className={s.inputContainer}
             contentEditable={true}
             onInput={handleInputChange}
         >
             {inputText}
+
+        </div >
+            <div className={s.image}>
+            <img className={s.reg} src={regular} alt=""/>
+            <img className={s.btn} src={button} alt=""/>
+        </div>
         </div>
     );
 };

@@ -12,7 +12,7 @@ export const Message = () => {
             {
               messages.map(el => {
                     const createdAtDate = dayjs(el.created_at * 1000);
-                    if (el.user.you) {
+                    if (el.user.you ) {
                         return (
                             <div key={el.id} className={`${s.messageWrapper} ${s.i}`}>
                                 <p className={`${s.message} ${s.iMessage}`}>{el.message}
@@ -21,7 +21,7 @@ export const Message = () => {
 
                             </div>
                         );
-                    } else {
+                    }  else if(!el.user.you && !el.is_new) {
                         return (
                             <div key={el.id} className={`${s.messageWrapper} ${s.friend}`}>
                                 <img style={{width:'35px', height:'35px', borderRadius:'5px'}} src={el.user.avatar} alt=""/>
@@ -32,10 +32,24 @@ export const Message = () => {
                             </div>
                         );
                     }
+                    else if(el.is_new){
+                        return <div>
+                        <div className={s.newmessege}>
+                            <span>Новые сообщения</span>
+                        </div>
+                            <div key={el.id} className={`${s.messageWrapper} ${s.friend}`}>
+                                <img style={{width:'35px', height:'35px', borderRadius:'5px'}} src={el.user.avatar} alt=""/>
+                                <span> {el.user.name}</span>
+                                <p className={`${s.message} ${s.friendMessage}`}>{el.message}
+                                    <span className={s.time}>{createdAtDate.format('HH:mm')}</span>
+                                </p>
+                            </div>
+                        </div>
+                  }
                 })
             }
         </div>
-            <Input/>
+            {messages.length ?  <Input/>: ''}
         </div>
     );
 };

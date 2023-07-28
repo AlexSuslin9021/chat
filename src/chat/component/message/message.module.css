@@ -14,7 +14,12 @@
     display: flex;
     justify-content: flex-end; /* Выравнивание ваших сообщений справа */
 }
-
+.newmessege{
+    width: 100%;
+    text-align: center;
+    margin:40px 0 ;
+    background: lightblue;
+}
 .i {
     margin-bottom: 8px; /* Отступ между вашими сообщениями */
 }

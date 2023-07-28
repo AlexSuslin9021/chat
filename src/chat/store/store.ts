@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import {chat} from "./chat";
-import {message} from "../message/messages.slice";
+import {message} from "../component/message/messages.slice";
 
 
 export const store = configureStore({

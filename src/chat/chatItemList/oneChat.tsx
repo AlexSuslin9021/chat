@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './chatItemList.module.css'
-import {getMessage} from "../message/messages.slice";
+import {getMessage} from "../component/message/messages.slice";
 import {useAppDispatch} from "../hooks/useAppDispatch";
 
 export const OneChat: React.FC<PropsType> = ({lastName, id, src, name, message, time}) => {

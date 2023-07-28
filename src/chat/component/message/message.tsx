@@ -1,12 +1,13 @@
 import React from 'react';
-import { useAppSelector } from "../store/store";
+import { useAppSelector } from "../../store/store";
 import s from './message.module.css';
 import dayjs from "dayjs";
+import {Input} from "../input/input";
 
 export const Message = () => {
     const messages = useAppSelector(state => state.message);
 
-    return (
+    return (<div className={s.container}>
         <div className={s.messageContainer}>
             {
               messages.map(el => {
@@ -33,6 +34,8 @@ export const Message = () => {
                     }
                 })
             }
+        </div>
+            <Input/>
         </div>
     );
 };
